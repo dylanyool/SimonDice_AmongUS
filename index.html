@@ -10,55 +10,60 @@
 </head>
 
 <body>
-    <section class="game">
+    <div class="board">
 
-        <div class="simon">
-            <div class="tablero">
-                <div class="indicator">
-                    <div id="lvl1" class="level ligthIt"></div>
-                    <div id="lvl2" class="level"></div>
-                    <div id="lvl3" class="level"></div>
-                    <div id="lvl4" class="level"></div>
-                    <div id="lvl5" class="level"></div>
-                </div>
-                <div class="pad empty">
-                    <div id="s1" class="num empty"></div>
-                    <div id="s2" class="num empty"></div>
-                    <div id="s3" class="num empty"></div>
-                    <div id="s4" class="num empty"></div>
-                    <div id="s5" class="num empty"></div>
-                    <div id="s6" class="num empty"></div>
-                    <div id="s7" class="num empty"></div>
-                    <div id="s8" class="num empty"></div>
-                    <div id="s9" class="num empty"></div>
+
+        <section class="game">
+
+            <div class="simon">
+                <div class="tablero">
+                    <div class="indicator">
+                        <div id="lvl1" class="level ligthIt"></div>
+                        <div id="lvl2" class="level"></div>
+                        <div id="lvl3" class="level"></div>
+                        <div id="lvl4" class="level"></div>
+                        <div id="lvl5" class="level"></div>
+                    </div>
+                    <div class="pad empty">
+                        <div id="s1" class="num empty"></div>
+                        <div id="s2" class="num empty"></div>
+                        <div id="s3" class="num empty"></div>
+                        <div id="s4" class="num empty"></div>
+                        <div id="s5" class="num empty"></div>
+                        <div id="s6" class="num empty"></div>
+                        <div id="s7" class="num empty"></div>
+                        <div id="s8" class="num empty"></div>
+                        <div id="s9" class="num empty"></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="userTbl">
-            <div class="tablero">
-                <div class="indicator">
-                    <div id="lvl1" class="level"></div>
-                    <div id="lvl2" class="level"></div>
-                    <div id="lvl3" class="level"></div>
-                    <div id="lvl4" class="level"></div>
-                    <div id="lvl5" class="level"></div>
-                </div>
-                <div class="pad">
-                    <div id="u1" class="num"></div>
-                    <div id="u2" class="num"></div>
-                    <div id="u3" class="num"></div>
-                    <div id="u4" class="num"></div>
-                    <div id="u5" class="num"></div>
-                    <div id="u6" class="num"></div>
-                    <div id="u7" class="num"></div>
-                    <div id="u8" class="num"></div>
-                    <div id="u9" class="num"></div>
+            <div class="userTbl">
+                <div class="tablero">
+                    <div class="indicator">
+                        <div id="lvl1" class="level"></div>
+                        <div id="lvl2" class="level"></div>
+                        <div id="lvl3" class="level"></div>
+                        <div id="lvl4" class="level"></div>
+                        <div id="lvl5" class="level"></div>
+                    </div>
+                    <div class="pad">
+                        <div id="u1" class="num"></div>
+                        <div id="u2" class="num"></div>
+                        <div id="u3" class="num"></div>
+                        <div id="u4" class="num"></div>
+                        <div id="u5" class="num"></div>
+                        <div id="u6" class="num"></div>
+                        <div id="u7" class="num"></div>
+                        <div id="u8" class="num"></div>
+                        <div id="u9" class="num"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-    </section>
+        </section>
+        <button id="btnEmpezar" class="btn-start" onclick="start()">Empezar</button>
+    </div>
+    <script src="ctrl.js"></script>
 </body>
 
 </html>
