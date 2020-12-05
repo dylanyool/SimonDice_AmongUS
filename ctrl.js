@@ -18,6 +18,7 @@ const s6 = document.getElementById('s6')
 const s7 = document.getElementById('s7')
 const s8 = document.getElementById('s8')
 const s9 = document.getElementById('s9')
+
 class SDGame {
 
     constructor() {
@@ -28,22 +29,22 @@ class SDGame {
     inicializar() {
         btnEmpezar.classList.add('hide')
         this.seleccionar = this.seleccionar.bind(this)
-        this.lvl = 3;
+        this.lvl = 1;
         this.userPad = {
             u1, u2, u3, u4, u5, u6, u7, u8, u9
         }
         this.gamePad = {
             s1, s2, s3, s4, s5, s6, s7, s8, s9
         }
-        this.userPad.u1.addEventListener('click',this.seleccionar)
-        this.userPad.u2.addEventListener('click',this.seleccionar)
-        this.userPad.u3.addEventListener('click',this.seleccionar)
-        this.userPad.u4.addEventListener('click',this.seleccionar)
-        this.userPad.u5.addEventListener('click',this.seleccionar)
-        this.userPad.u6.addEventListener('click',this.seleccionar)
-        this.userPad.u7.addEventListener('click',this.seleccionar)
-        this.userPad.u8.addEventListener('click',this.seleccionar)
-        this.userPad.u9.addEventListener('click',this.seleccionar)
+        this.userPad.u1.addEventListener('click', this.seleccionar)
+        this.userPad.u2.addEventListener('click', this.seleccionar)
+        this.userPad.u3.addEventListener('click', this.seleccionar)
+        this.userPad.u4.addEventListener('click', this.seleccionar)
+        this.userPad.u5.addEventListener('click', this.seleccionar)
+        this.userPad.u6.addEventListener('click', this.seleccionar)
+        this.userPad.u7.addEventListener('click', this.seleccionar)
+        this.userPad.u8.addEventListener('click', this.seleccionar)
+        this.userPad.u9.addEventListener('click', this.seleccionar)
 
     }
 
@@ -53,19 +54,27 @@ class SDGame {
 
     recorrerSecuencia() {
         for (let i = 0; i < this.lvl; i++) {
-            setTimeout(() => this.iluminar('s' + this.secuencia[i]), 1000 * i)
+            setTimeout(() => this.iluminar(this.gamePad['s' + this.secuencia[i]]), 1000 * i)
         }
     }
     iluminar(pad) {
-        this.gamePad[pad].classList.add('ligthIt')
+        pad.classList.add('ligthIt')
         setTimeout(() => this.apagar(pad), 350)
     }
     apagar(pad) {
-        console.log(pad)
-        this.gamePad[pad].classList.remove('ligthIt')
+        pad.classList.remove('ligthIt')
     }
-    seleccionar(ev){
-        console.log(ev)
+    seleccionar(ev) {
+        let pad = ev.target.dataset.id
+        this.iluminar(this.userPad['u'+pad])
+        if (this.secuencia[this.lvl-1] == pad) {
+            this.lvl++;
+            this.recorrerSecuencia();
+        }else{
+            this.lvl=1;
+            this.recorrerSecuencia()
+        }
+
     }
     agregarLvl() {
         //this.secuencia.add
