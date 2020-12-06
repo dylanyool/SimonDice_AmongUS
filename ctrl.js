@@ -53,6 +53,7 @@ class SDGame {
     }
 
     generarSecuencia() {
+        console.log('generando secuencia')
         this.secuencia = new Array(ultimoLvl).fill(0).map(a => a += this.generar_numero())
     }
 
@@ -74,7 +75,8 @@ class SDGame {
         pad.classList.remove('ligthIt')
     }
     seleccionar(ev) {
-        let pad = ev.target.dataset.id
+        var pad = ev.target.dataset.id
+        console.log(pad + '=' + this.secuencia[this.subnivel])
         this.iluminar(this.userPad['u' + pad])
         if (this.secuencia[this.subnivel] == pad) {
             this.subnivel++;
@@ -85,7 +87,7 @@ class SDGame {
             this.GameOver()
         }
     }
-    
+
     agregarLvl() {
         this.eliminarEventosClick();
         if (this.lvl === ultimoLvl) {
@@ -102,6 +104,7 @@ class SDGame {
 
     GameOver() {
         this.lvl = 1;
+        this.eliminarEventosClick()
         console.log('perdiste we')
         this.indicarError()
         setTimeout(() => {
@@ -112,6 +115,7 @@ class SDGame {
             btnEmpezar.classList.remove('hide')
         }, 500)
     }
+
     indicarError() {
         for (let i = ultimoLvl; i > 0; i--) {
             this.levels['lvl' + i].classList.add('wrong');
